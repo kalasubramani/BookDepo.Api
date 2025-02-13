@@ -9,8 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddEndpointsApiExplorer();
+
 //add dbcontext
-builder.Services.AddDbContext<BookDbContext>(x => {
+builder.Services.AddDbContext<BooksDbContext>(x => {
     var connectionString = builder.Configuration.GetConnectionString("DbConnection");
     x.UseSqlServer(connectionString);
 });

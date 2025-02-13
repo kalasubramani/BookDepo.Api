@@ -5,13 +5,13 @@
 namespace BookDepo.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class BookDbMigration : Migration
+    public partial class BooksDBMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Books",
+                name: "books",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -23,7 +23,7 @@ namespace BookDepo.Api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.id);
+                    table.PrimaryKey("PK_books", x => x.id);
                 });
         }
 
@@ -31,7 +31,7 @@ namespace BookDepo.Api.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "books");
         }
     }
 }

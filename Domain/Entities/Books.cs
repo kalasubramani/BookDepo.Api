@@ -2,27 +2,27 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace BookDepo.Api.Domain;
+namespace BookDepo.Api.Domain.Entities;
 
-//[Table("book")]
-public record Book
+[Table("books")]
+public record Books
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("id")]
-    public int Id { get; set; }
+    public int Id { get; init; }
 
     [Column("book_name")]
     [MaxLength(100)]
-    public string? BookName { get; set; }
+    public string? BookName { get; init; }
 
     [Column("book_code")]
     [MaxLength(10)]
-    public string? BookCode { get; set; }
+    public string? BookCode { get; init; }
 
     [Column("price", TypeName = "decimal(7,2)")]
-    public decimal Price { get; set; }
+    public decimal Price { get; init; }
 
     [Column("stock_available")]
-    public int StockAvailable { get; set; }
+    public int StockAvailable { get; init; }
 }
